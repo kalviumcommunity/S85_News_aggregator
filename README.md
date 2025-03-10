@@ -1,4 +1,6 @@
-S85_News_aggregator
+
+# S85_News_aggregator
+
 Project Title
 
 News Aggregator
@@ -43,16 +45,30 @@ Tech Stack
 
 Frontend:
 
-React.js for building a dynamic and responsive user interface Context API or Redux for state management Tailwind CSS for modern, responsive design Backend:
+React.js for building a dynamic and responsive user interface
+Context API or Redux for state management
+Tailwind CSS for modern, responsive design
+Backend:
 
-Node.js with Express.js for server-side logic and API integration News APIs (e.g., NewsAPI, Google News API) to fetch and deliver articles MongoDB for storing user preferences, bookmarks, and session data Tools:
+Node.js with Express.js for server-side logic and API integration
+News APIs (e.g., NewsAPI, Google News API) to fetch and deliver articles
+MongoDB for storing user preferences, bookmarks, and session data
+Tools:
 
-Postman for API testing and debugging GitHub for version control and collaboration MongoDB Atlas for cloud-based database management Why This Project
+Postman for API testing and debugging
+GitHub for version control and collaboration
+MongoDB Atlas for cloud-based database management
+Why This Project
 
 This project was chosen because it addresses a real-world need by simplifying access to relevant news from multiple sources.
 
 The News Aggregator is valuable as it:
 
-Explores API integrations for fetching and processing external data. Encourages a user-first approach with personalization features like customizable feeds and bookmarking. Strengthens full-stack development skills by leveraging the MERN stack for dynamic data handling. Offers scalability opportunities, such as adding AI-based recommendations or sentiment analysis in future iterations. Working on this project will help enhance problem-solving skills and reinforce a comprehensive understanding of building modern web applications.
+Explores API integrations for fetching and processing external data.
+Encourages a user-first approach with personalization features like customizable feeds and bookmarking.
+Strengthens full-stack development skills by leveraging the MERN stack for dynamic data handling.
+Offers scalability opportunities, such as adding AI-based recommendations or sentiment analysis in future iterations.
+Working on this project will help enhance problem-solving skills and reinforce a comprehensive understanding of building modern web applications.
 
-Render link-https://s85-news-aggregator.onrender.com
+Render Link-https://s85-news-aggregator.onrender.com
+cloudfare link-https://efc82758.news-aggregator-ec3.pages.dev/
