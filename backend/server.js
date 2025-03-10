@@ -1,32 +1,28 @@
-require("dotenv").config(); // Load environment variables at the top
 const express = require("express");
-const connectDB = require("./config/db"); // Ensure correct path
+const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const connectDatabase = require("./config/db");
+const newsRoutes = require("./routes/routes"); // Import the news routes
 
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware to parse JSON
 app.use(express.json());
+connectDatabase();
 
-// Connect to MongoDB
-connectDB();
-
-// Basic route
+// Home Route - Show MongoDB Connection Status
 app.get("/", (req, res) => {
-  res.send("Hello, I am Gagan. This is my project News Aggregator");
+    const dbStatus = mongoose.connection.readyState === 1 
+        ? "✅ MongoDB Connected" 
+        : "❌ MongoDB Not Connected";
+
+    res.send(`<h2>Welcome to the News Aggregator API!</h2><p>${dbStatus}</p>`);
 });
 
-// Check MongoDB connection status
-app.get("/home", (req, res) => {
-  const status =
-    mongoose.connection.readyState === 1
-      ? "Connected to MongoDB"
-      : "Disconnected from MongoDB";
-  res.json({ status });
-});
+// Use Routes
+app.use("/api", newsRoutes); // All news routes will be under "/api/news"
 
-// Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });
