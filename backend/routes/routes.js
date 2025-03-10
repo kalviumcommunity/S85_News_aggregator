@@ -32,7 +32,7 @@ router.post("/news", async (req, res) => {
         const newArticle = new News({ title, content, source, author, url, category, publishedAt });
         await newArticle.save();
         res.status(201).json({ message: "News article added successfully", newArticle });
-    } catch (error) {
+    } catch (error) {    
         res.status(400).json({ message: "Error adding news article", error });
     }
 });
