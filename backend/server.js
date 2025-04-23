@@ -1,13 +1,15 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const cors = require("cors"); // ✅ Import CORS
 const connectDatabase = require("./config/db");
 const newsRoutes = require("./routes/routes"); // Import the news routes
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
+app.use(cors({ origin: "http://localhost:5173" })); // ✅ Enable CORS for frontend
 app.use(express.json());
 connectDatabase();
 

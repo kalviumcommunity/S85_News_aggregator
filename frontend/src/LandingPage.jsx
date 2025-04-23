@@ -1,10 +1,10 @@
 const LandingPage = () => {
-    return (
-      <div style={{ textAlign: "center", padding: "20px", backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
-        <h1 style={{ color: "#333", fontSize: "28px" }}>Welcome to ASAP project of News Aggregator , one step destination for every news</h1>
-        <p style={{ color: "#555", fontSize: "18px" }}>Hello!! I am Gagan</p>
-      </div>
-    );
-  };
-  
-  export default LandingPage;
+  return (
+    <div className="text-center mt-10">
+      <h1 className="text-4xl font-bold">Welcome to ASAP Project of News Aggregator</h1>
+      <p className="mt-4 text-lg">Hello!! I am Gagan</p>
+    </div>
+  );
+};
+
+export default LandingPage;

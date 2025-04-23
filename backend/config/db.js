@@ -2,16 +2,25 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    if (!process.env.MONGO_URI) {
-      throw new Error("MONGO_URI is not defined in .env file");
+    const mongoURI = process.env.MONGO_URI;
+
+    if (!mongoURI) {
+      throw new Error("MONGO_URI is not defined in the .env file");
     }
 
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect(mongoURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1); // Exit process if connection fails
+    console.error(`❌ MongoDB Connection Error: ${error.message}`);
+
+    // Optional: uncomment for debugging SSL/TLS issues only
+    // console.error(error);
+
+    process.exit(1); // Exit app on DB connection failure
   }
 };
 
