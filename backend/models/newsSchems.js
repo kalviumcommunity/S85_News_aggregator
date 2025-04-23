@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
 
 const newsSchema = new mongoose.Schema({
-  title: { type: String, required: true },  // News title
-  content: { type: String, required: true }, // Full article content
-  source: { type: String, required: true }, // News source (e.g., BBC, CNN)
-  author: { type: String }, // Author name (if available)
-  url: { type: String, required: true, unique: true }, // Source URL for the news
-  category: { type: String }, // Category (e.g., Technology, Sports, Politics)
-  publishedAt: { type: Date, default: Date.now }, // Date of publication
-  postedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
-
+  title: { type: String, required: true },
+  content: { type: String, required: true },
+  source: { type: mongoose.Schema.Types.ObjectId, ref: "Source" },
+  author: { type: String },
+  url: { type: String, required: true, unique: true },
+  category: { type: String },
+  publishedAt: { type: Date, default: Date.now },
+  postedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
+  tags: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tag" }],
 });
+
 
 const News = mongoose.model("News", newsSchema);
 module.exports = News;
