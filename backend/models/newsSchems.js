@@ -8,6 +8,8 @@ const newsSchema = new mongoose.Schema({
   url: { type: String, required: true, unique: true }, // Source URL for the news
   category: { type: String }, // Category (e.g., Technology, Sports, Politics)
   publishedAt: { type: Date, default: Date.now }, // Date of publication
+  postedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+
 });
 
 const News = mongoose.model("News", newsSchema);
