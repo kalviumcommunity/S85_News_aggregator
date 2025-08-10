@@ -1,0 +1,51 @@
+# 📰 News Aggregator
+
+**News Aggregator** is a modern web app that delivers **trending news** from multiple sources in real-time.  
+Users can **browse by category, search for specific topics, and bookmark their favorite articles** for later reading — all in one clean, responsive interface.
+
+---
+
+## ✨ Features
+- 🚀 **Trending News Feed** — Always stay updated with the hottest headlines.
+- 🌍 **Multiple News Sources** — Aggregates from top publishers & APIs.
+- 🗂 **Category Filtering** — Browse by Business, Sports, Technology, Entertainment, and more.
+- 🔍 **Keyword Search** — Find stories about any topic instantly.
+- 📌 **Bookmark Articles** — Save your favorite news to read later.
+- 🕒 **Real-Time Updates** — Fresh content every time you open the app.
+- 📱 **Responsive Design** — Works perfectly on desktop, tablet, and mobile.
+
+---
+
+## 🛠 Tech Stack
+### **Frontend**
+- ⚛️ React.js
+- 🎨 Tailwind CSS
+- 🔄 Axios (API calls)
+- 📂 Local Storage (for bookmarks)
+
+### **Backend**
+- 🟢 Node.js
+- 🚂 Express.js
+- 📰 News API (gnews api)
+- 🗃 MongoDB 
+
+---
+
+## 📂 Project Structure
+```plaintext
+news-aggregator/
+├── frontend/                 
+│   ├── src/
+│   │   ├── components/       # Navbar, NewsCard, BookmarkList, etc.
+│   │   ├── pages/            # Home, Bookmarks, SearchResults
+│   │   └── App.js
+│   └── package.json
+│
+├── backend/                  
+│   ├── controllers/          # newsController.js
+│   ├── routes/               # newsRoutes.js
+│   ├── services/             # newsAPIService.js
+│   ├── server.js
+│   └── package.json
+│
+└── README.md
